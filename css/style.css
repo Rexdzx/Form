@@ -1,0 +1,180 @@
+body {
+  color: #ffffff;
+  background: #92959a;
+  font-family: "roboto", sans-serif;
+}
+.form-control {
+  height: 40px;
+  box-shadow: none;
+  color: #969fa4;
+}
+.form-control :focus {
+  border-color: #5cb85c;
+}
+.form-control,
+.btn {
+  border-radius: 3px;
+}
+.formregistrasi {
+  width: 450px;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 15px;
+}
+.formregistrasi h2 {
+  color: #636363;
+  margin: 0 0 15px;
+  position: relative;
+  text-align: center;
+}
+.formregistrasi h2:before,
+.formregistrasi h2:after {
+  content: "";
+  height: 2px;
+  width: 30%;
+  background: #d4d4d4;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+.formregistrasi h2:before {
+  left: 0;
+}
+.formregistrasi h2:after {
+  right: 0;
+}
+.formregistrasi .hint-text {
+  color: #999;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.formregistrasi form {
+  color: #999;
+  border-radius: 3px;
+  margin-top: 15px;
+  background: #f2f3f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.formregistrasi .form-group {
+  margin-bottom: 20px;
+}
+.formregistrasi .btn {
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 140px;
+  outline: none !important;
+}
+.formregistrasi .row div:first-child {
+  padding-right: 10px;
+}
+.formregistrasi .row div:last-child {
+  padding-left: 10px;
+}
+.formregistrasi a {
+  color: #fff;
+  text-decoration: underline;
+}
+.formregistrasi a:hover {
+  text-decoration: none;
+}
+.formregistrasi form a {
+  color: #5cb85c;
+  text-decoration: none;
+}
+.formregistrasi form a:hover {
+  text-decoration: underline;
+}
+.formmasuk {
+  width: 450px;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 15px;
+  padding-top: 125px;
+}
+.formmasuk h2 {
+  color: #636363;
+  margin: 0 0 15px;
+  position: relative;
+  text-align: center;
+}
+.formmasuk h2:before,
+.formmasuk h2:after {
+  content: "";
+  height: 2px;
+  width: 30%;
+  background: #d4d4d4;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+.formmasuk h2:before {
+  left: 0;
+}
+.formmasuk h2:after {
+  right: 0;
+}
+.formmasuk form {
+  color: #999;
+  border-radius: 3px;
+  margin-top: 15px;
+  background: #f2f3f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.formmasuk.form-group {
+  margin-bottom: 20px;
+}
+.formmasuk .btn {
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 140px;
+  outline: none !important;
+}
+.formmasuk .row div:first-child {
+  padding-right: 10px;
+}
+.formmasuk .row div:last-child {
+  padding-left: 10px;
+}
+.formmasuk a {
+  color: #fff;
+}
+.formmasuk a:hover {
+  text-decoration: none;
+}
+.formmasuk form a {
+  color: #5cb85c;
+  text-decoration: none;
+}
+.formmasuk form a:hover {
+  text-decoration: underline;
+}
+.pesan {
+  position: sticky;
+  top: 0;
+  max-width: 1200px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  z-index: 1000;
+  background-color: #92959a;
+  margin: 0 auto;
+}
+
+.pesan span {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.pesan i {
+  color: #e74c3c;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.pesan i:hover {
+  color: #fff;
+}
