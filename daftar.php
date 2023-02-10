@@ -21,16 +21,16 @@ if(isset($_POST['daftar'])){
     $konfirmasipassword = md5($_POST['konfirmasi_password']);
     $konfirmasipassword =filter_var($konfirmasipassword, FILTER_SANITIZE_STRING);
 
-     $select = $conn->prepare("SELECT * FROM `user` WHERE email = ?");
+     $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
    $select->execute([$email]);
 
    if($select->rowCount() > 0){
-      $message[] = 'user already exist!';
+      $message[] = 'Email Sudah Terpakai';
    }else{
       if($password != $konfirmasipassword){
-         $message[] = 'confirm password not matched!';
+         $message[] = 'Password Tidak Sama';
       }else{
-         $insert = $conn->prepare("INSERT INTO `user`(`nama_depan`, `nama_belakang`, `username`, `email`, `password`) VALUES(?,?,?,?,?)");
+         $insert = $conn->prepare("INSERT INTO `users`(`nama_depan`, `nama_belakang`, `username`, `email`, `password`) VALUES(?,?,?,?,?)");
          $insert->execute([$namadepan, $namabelakang, $username, $email, $konfirmasipassword]);
          if($insert){
             header('location:masuk.php');
@@ -54,7 +54,7 @@ if(isset($_POST['daftar'])){
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../form/css/style.css">
 </head>
 
 <body>
@@ -111,9 +111,6 @@ if(isset($_POST['daftar'])){
             document.getElementById("pass2").setCustomValidity('');
     }
     </script>
-</body>
-
-</html>
 </body>
 
 </html>

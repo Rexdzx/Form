@@ -13,7 +13,7 @@ if(isset($_POST['masuk'])){
     $password = filter_var($password, FILTER_SANITIZE_STRING);
 
 
-    $select  =$conn->prepare("SELECT * FROM `user` WHERE email = ? AND password = ?");
+    $select  =$conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
     $select->execute([$email, $password]);
     $row = $select->fetch(PDO::FETCH_ASSOC);
 
@@ -75,7 +75,7 @@ if(isset($_POST['masuk'])){
             <h2>Sign In</h2>
 
             <div class="form-group">
-                <label for="username" style="color:#000">Email</label>
+                <label for="email" style="color:#000">Email</label>
                 <input class="form-control" type="email" name="email" placeholder="Email" required="required"
                     style="color: rgb(20, 16, 16);">
             </div>
@@ -94,3 +94,5 @@ if(isset($_POST['masuk'])){
 
 
 </body>
+
+</html>

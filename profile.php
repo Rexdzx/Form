@@ -35,9 +35,10 @@ if(!isset($user_id)){
                 <div class="card">
                     <div class="card-title text-center">
                         <h1>Profile</h1><br>
-                        <p><a href="update-profile.php" style="text-decoration:none ;">Update Profile</a></p>
+                        <p><a href="update-profile.php" style="text-decoration:none ; color: #28a745;">Update
+                                Profile</a></p>
                         <?php
-                            $select_profile = $conn->prepare("SELECT * FROM `user` WHERE id = ?");
+                            $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
                             $select_profile->execute([$user_id]);
                             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                           ?>
@@ -47,7 +48,7 @@ if(!isset($user_id)){
                         <p style="font-size:24px ;">Halo : <?= $fetch_profile['username']; ?></p>
                         <p>Anda Berhasil Masuk Ke Halaman Profil</p>
                         <center>
-                            <a href="logout.php" style="text-decoration:none;">Logout</a>
+                            <a href="logout.php" style="text-decoration:none; color: #28a745;">Logout</a>
                         </center>
                     </div>
                 </div>

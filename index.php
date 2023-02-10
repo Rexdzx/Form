@@ -17,7 +17,7 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <div class="row">
-                    <h1 class="text-center fs-1 text-white mt-4">Selamat datang</h1>
+                    <h1 class="text-center fs-1 text-white mt-4">Selamat Datang</h1>
                     <div class="text-center position-absolute top-50 start-50 translate-middle">
                         <a href="masuk.php" class="btn btn-secondary fs-1 me-5">Masuk</a>
                         <a href="daftar.php" class="btn btn-success fs-1 ms-5">Daftar</a>

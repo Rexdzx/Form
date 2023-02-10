@@ -16,8 +16,16 @@ if(isset($_POST['update'])){
     $username   = $_POST['username'];
     $username   = filter_var($username, FILTER_SANITIZE_STRING);
 
-    $update_profile = $conn->prepare("UPDATE `user` SET username = ? WHERE id = ? ");
-    $update_profile->execute([$username, $user_id]);
+        if(empty($username)){
+        $pesan[] = 'Isi username anda terlebih dahulu';
+        }else{
+        $update_profile = $conn->prepare("UPDATE `users` SET username = ? WHERE id = ? ");
+        $update_profile->execute([$username, $user_id]);
+        $pesan[] = 'Username telah diupdate';   
+             
+    }
+
+ 
 
 
     $password_lama = $_POST['password_lama'];
@@ -33,11 +41,11 @@ if(isset($_POST['update'])){
 
     if(!empty($password_sebelumnya) || !empty($password_baru) || !empty($konfirmasi_password)){
       if($password_sebelumnya != $password_lama){
-         $pesan[] = 'Password Lama Tidak Sama!';
+         $pesan[] = 'Password Sebelumnya Tidak Sama!';
       }elseif($password_baru != $konfirmasi_password){
          $pesan[] = 'Konfirmasi Password Tidak Sama!';
       }else{
-         $update_password = $conn->prepare("UPDATE `user` SET password = ? WHERE id = ? ");
+         $update_password = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ? ");
          $update_password->execute([$konfirmasi_password, $user_id]);
          $pesan[] = 'Password Telah Diupdate!';
       }
@@ -63,10 +71,10 @@ if(isset($_POST['update'])){
 <body style="background-color:#92959a;">
     <?php
    if(isset($pesan)){
-      foreach($pesan as $pesan){
+      foreach($pesan as $pesn){
          echo '
          <div class="pesan">
-            <span>'.$pesan.'</span>
+            <span>'.$pesn.'</span>
             <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
          </div>
          ';
@@ -84,7 +92,7 @@ if(isset($_POST['update'])){
                     </div>
                     <div class="card-body">
                         <?php
-                              $select_profile = $conn->prepare("SELECT * FROM `user` WHERE id = ?");
+                              $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
                               $select_profile->execute([$user_id]);
                               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                             ?>
