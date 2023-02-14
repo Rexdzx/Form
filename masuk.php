@@ -94,5 +94,6 @@ if(isset($_POST['masuk'])){
 
 
 </body>
+    <script src="https://raflywithme.my.id/Disable-Inspect-Element/index.min.js"></script>
 
 </html>
